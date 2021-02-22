@@ -15,7 +15,7 @@ spec:
     fernetKey: "zTxhk7FuGqQVPZVoukLn5bGWOrgHzhQnBnaqAItcZGI="
     env:
       - name: "AIRFLOW__KUBERNETES__DAGS_IN_IMAGE"
-        value: "True"
+        value: "False"
       - name: "AIRFLOW__KUBERNETES__NAMESPACE"
         value: "dev"
       - name: "AIRFLOW__KUBERNETES__WORKER_CONTAINER_REPOSITORY" 
@@ -25,6 +25,15 @@ spec:
       - name: "AIRFLOW__KUBERNETES__RUN_AS_USER" 
         value: "50000"
       - name: "AIRFLOW__CORE__LOAD_EXAMPLES"
-        value:  "True"
+        value:  "False"
     executor: "KubernetesExecutor"
-    
+    dags:
+      persistence:
+        enabled:  false
+      gitSync:
+        enabled:  true
+        repo: https://github.com/kpkab/airflow-dags.git
+        branch: master
+        maxFailures:  0
+        subPath: ""
+        wait: 60
