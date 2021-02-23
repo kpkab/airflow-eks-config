@@ -8,9 +8,9 @@ metadata:
 spec:
   releaseName: airflow-dev
   chart:
-    repository: https://airflow-helm.github.io/charts
+    repository: https://marclamberti.github.io/airflow-eks-helm-chart
     name: airflow
-    version: 7.16.0
+    version: 1.0.0
   values:
     fernetKey: "zTxhk7FuGqQVPZVoukLn5bGWOrgHzhQnBnaqAItcZGI="
     env:
