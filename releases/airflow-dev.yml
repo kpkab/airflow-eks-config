@@ -8,7 +8,7 @@ metadata:
 spec:
   releaseName: airflow-dev
   chart:
-    repository: https://github.com/apache/airflow/tree/master/chart
+    repository: https://airflow-helm.github.io/charts
     name: airflow
     version: 7.16.0
   values:
